@@ -1,0 +1,88 @@
+body {
+         
+  background-image: url('file:///C:/Users/simone/Desktop/TrabalhoDoMiguelHTML/img/backgroudTrabalhoMiguel.png');
+  background-size: cover; 
+  background-position: center; 
+  background-attachment: fixed; 
+   height: 100vh; 
+   font-family: arial;
+  }
+
+.cabecalho{
+display: flex;
+flex-direction: row;
+justify-content: space-between;
+background-color: black;
+color: white;
+padding: 10px;
+border-radius: 10px;
+}
+
+.inicio{
+margin-top: 30px;
+text-decoration: none;
+color: white;
+}
+
+.boxPergunta{
+text-align: center;
+font-size: 35px;
+background-color: navy;
+width: 900px;
+height: 300px;
+margin: 7% auto;
+color: white;
+padding: 10px;
+border-radius: 10px;
+border: 5px solid black;
+}
+
+.botoes{
+color: black;
+font-size: 20px;
+padding: 10px;
+border-radius: 10px;
+border: none;
+margin: 10px;
+}
+
+
+
+.botoes:hover{
+box-shadow: 0 0 10px black;
+
+background-color: midnightblue;
+transition: 0.5s;	
+					a{
+					color: white;
+					}
+}
+.respostas{
+text-decoration: none;
+color: black;
+}
+
+
+
+   .timer {
+      font-size: 48px;
+      font-family: Arial, sans-serif;
+      text-align: center;
+      margin-top: 20px;
+      width: 70px;
+      height: 60px;
+      margin-top: -10%;
+      border-radius: 10px;
+      background-color: black;
+      box-shadow: 0 0 10px black;
+      color: white;
+    }
+
+    .pergunta{
+    font-size: 55px;
+    }
+
+    .botaoInicio{
+    background-color: black;
+    border: none;
+    }

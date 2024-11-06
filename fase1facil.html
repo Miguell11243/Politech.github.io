@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<title>Primeira Pergunta</title>
+</head>
+<header>
+	<div class="cabecalho">
+	<h1>Pergunta 1</h1>
+	<button class="botaoInicio" onclick="certezaInicio()"><a href="inicio" class="inicio"> Voltar ao inicio </a></button>
+</div>
+</header>
+
+
+<body>
+
+
+	<div class="boxPergunta">
+
+	<h2 class="pergunta"> Oque significa a palavra informatica ?</h2>
+
+
+		<button onclick="respostaCorreta()"class="botoes"><a class="respostas"href="fase2facil.html"> Informação Automatica</a></button>
+		<button onclick="respostaErrada()"class="botoes"><a class="respostas"> Tecnologia da Informação</a></button>
+		<button onclick="respostaErrada()"class="botoes"><a class="respostas"> Informação Matematica</a></button>
+
+	</div>
+
+
+  <div class="timer" id="timer">50</div>
+
+  <script>
+    let timeLeft = 50000;
+    
+    const timerElement = document.getElementById('timer');
+    
+    function updateTimer() {
+      timerElement.textContent = timeLeft;
+      
+      timeLeft--;
+      
+      if (timeLeft < 0) {
+        clearInterval(timerInterval);
+        timerElement.textContent = alert("O tempo acabou c é burro");
+        window.location.href = 'paginaRespostaErrada.html';
+      }
+    }
+    
+   
+    const timerInterval = setInterval(updateTimer, 1000);
+
+     function respostaErrada(){
+    	alert("Resposta Errada")
+    	window.location.href = 'paginaRespostaErrada.html'
+
+    }
+
+    function respostaCorreta(){
+    alert("Parábens Resposta correta")
+    window.location.href = 'fase2facil.html'
+
+    }
+
+ function certezaInicio() {
+    let certeza = prompt("Você tem certeza que quer voltar ao inicio");
+
+    if (certeza === null || certeza === "") {
+        
+        return;
+    }
+
+    if (certeza.toLowerCase() === "sim") {
+        window.location.href = 'menuPrincipal.html'; 
+    }
+}
+  </script>
+
+</body>
+</html>
