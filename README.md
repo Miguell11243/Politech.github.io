@@ -1,1 +1,1 @@
-https://miguell11243.github.io/Politech.github.io/dificuldade.html
+https://miguell11243.github.io/Politech.github.io/menuInicial.html
