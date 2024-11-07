@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" type="text/css" href="style.css" />
+    <title>Segunda Pergunta</title>
+  </head>
+  <header>
+    <div class="cabecalho">
+      <h1>Pergunta 2 - <u>Turma Desenvolvimento de Sistemas 2°Ds</u></h1>
+      <button class="botaoInicio" onclick="certezaInicio()">
+      <img class="casaIcone"src="https://img.icons8.com/ios7/600/FFFFFF/home.png" alt="" width="40px" height="40px">
+      </button>
+    </div>
+  </header>
+
+  <body>
+    <div class="boxPergunta"> 
+      <h2 class="pergunta">Qual a linguagem a seguir é usada para a <span>estilização</span> em um site em HTML?</h2>
+
+      <button onclick="respostaErrada()" class="botoes">
+        <a class="respostas">
+          JavaScript (Js)</a
+        >
+      </button>
+      <button onclick="respostaErrada()" class="botoes">
+        <a class="respostas"> C Plus Plus (C ++)</a>
+      </button>
+      <button onclick="respostaCorreta()" class="botoes">
+        <a class="respostas"> Cascading Style Sheets (CSS)</a>
+      </button>
+    </div>
+
+    <div class="timer" id="timer">120</div>
+
+    <script>
+      let timeLeft = 1200;
+
+      const timerElement = document.getElementById("timer");
+
+      function updateTimer() {
+        timerElement.textContent = timeLeft;
+
+        timeLeft--;
+
+        if (timeLeft < 0) {
+          clearInterval(timerInterval);
+          timerElement.textContent = alert("O tempo acabou c é burro");
+          window.location.href = "paginaRespostaErrada.html";
+        }
+      }
+
+      const timerInterval = setInterval(updateTimer, 1000);
+
+      function respostaErrada() {
+        let certezaResposta = prompt("Você tem certeza de sua Resposta?");
+
+        if (certezaResposta.toLowerCase() === "sim") {
+          alert("Infelizmente sua resposta está completamente errada");
+          window.location.href = "paginaRespostaErrada.html";
+        } else {
+          return;
+        }
+      }
+
+      function respostaCorreta() {
+        let certezaResposta2 = prompt("Você tem certeza de sua Resposta?");
+
+        if (certezaResposta2.toLowerCase() === "sim") {
+          alert("Você esta com toda certeza...😞");
+          alert("Corretisimo")
+          window.location.href = "fase3facil.html";
+        } else {
+          return;
+        }
+      }
+
+
+      function certezaInicio() {
+        let certeza = prompt("Você tem certeza que quer voltar ao inicio");
+
+        if (certeza === null || certeza === "") {
+          return;
+        }
+
+        if (certeza.toLowerCase() === "sim") {
+          window.location.href = "menuPrincipal.html";
+        }
+      }
+    </script>
+  </body>
+</html>
