@@ -203,7 +203,9 @@ text-decoration: none;
   border-radius: 10px;
   transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease;
 }
-
+.iniciar:hover{
+color: black;
+}
 .botaoIniciarJogo:hover{
   box-shadow: 0 0 5px black;
 background-color: white;
