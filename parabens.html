@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body>
+    <img
+      src="https://img1.picmix.com/output/stamp/normal/5/9/6/8/648695_03eca.gif"
+      alt="gifConfete"
+      id="gif"
+      class="gif"
+    />
+    <h1 class="parabensTitulo">
+      Parábens você acertou todas as perguntas, resgate seu prêmio!
+    </h1>
+
+    <div class="container">
+      <img
+        src="https://media.tenor.com/0ENB5HuTH0gAAAAj/trophy-beker.gif"
+        class="trofeu"/>
+        <a href="menuInicial.html" class="reiniciar">Reiniciar</a>
+    </div>
+    
+
+  </body>
+  <script>
+  window.onload = function() {
+            setTimeout(function() {
+                const gif = document.getElementById('gif');
+                gif.classList.add('hidden'); 
+
+                setTimeout(function() {
+                    gif.style.display = 'none';  /* admito precisei de ajuda de AI pra fazer essa parte, slk nunca ia pensar nisso nao*/
+                }, 1000); 
+            }, 2000);
+        };
+  </script>
+</html>

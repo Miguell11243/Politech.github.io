@@ -8,7 +8,7 @@
   </head>
   <header>  
     <div class="cabecalho">
-      <h1>Pergunta 1 - <u>Turma Desenvolvimento de Sistemas 2°Ds</u></h1>
+      <h1><u>Turma Desenvolvimento de Sistemas 2°Ds</u></h1>
       <button class="botaoInicio" onclick="certezaInicio()">
         <img
           class="casaIcone"
@@ -47,13 +47,17 @@
         let certezaResposta = prompt("Você tem certeza que gostaria dessa Dificuldade?");
 
         if (certezaResposta.toLowerCase() === "sim") {
+
           let gostariaDificuldade = prompt ("Esta pronto para começar? Você terá 1 minuto para responder 4 questões fáceis");
-              if (gostariaDificuldade.toLowerCase() === "sim")
+
+              if (gostariaDificuldade.toLowerCase() === "sim" || "ok")
                 window.location.href = "fase1facil.html";
         
-              } else {
-          return;
-        }
+              } else{
+                    return;
+              }
+          
+         
       }
 
       function certezaMedio() {
