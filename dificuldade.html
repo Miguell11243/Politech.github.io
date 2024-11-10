@@ -4,19 +4,19 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="stylesheet" type="text/css" href="style.css" />
-    <title>Primeira Pergunta</title>
+    <title>Escolha a Dificuldade</title>
   </head>
   <header>
     <div class="cabecalho">
-      <h1>Pergunta 1 - <u>Turma Desenvolvimento de Sistemas 2°Ds</u></h1>
-      <button class="botaoInicio" onclick="certezaInicio()">
-      <img class="casaIcone" src="https://img.icons8.com/ios7/600/FFFFFF/home.png" alt="" width="40px" height="40px">
+      <h1>Escolha a dificuldade <u>-Turma Desenvolvimento de Sistemas 2°Ds</u></h1>
+      <button class="botaoInicio">
+      <img class="casaIcone" src="" alt="" width="40px" height="40px">
       </button>
     </div>
   </header>
 
   <body>
-    <div class="boxPergunta"> 
+    <div class="boxPerguntaDificuldade"> 
       <h2 class="pergunta">Qual a <span>Dificuldade</span> desejada?</h2>
 
       <button id="buttonShowFacil" class="botaoDificuldade">
@@ -33,13 +33,13 @@
     </div>
 
     <dialog id="modalFacil" class="modal">
-      <h2>Você tem certeza da sua respota?</h2>
+      <h2>Você realmente gostaria da dificuldade <u>Fácil</u> ? Você tera 120 segundos para responder 4 questões fáceis</h2>
       <button class="buttonYes" data-page="fase1facil.html">Sim</button>
       <button class="buttonNo">Não</button>
     </dialog>
 
     <dialog id="modalMedio" class="modal">
-      <h2>Você tem certeza da sua respota?</h2>
+      <h2>Você realmente gostaria da dificuldade <u>Medio</u> ? Você tera 120 segundos para responder 3 questões médias</h2>
       <button class="buttonYes" data-page="fase1medio.html">Sim</button>
       <button class="buttonNo">Não</button>
     </dialog>

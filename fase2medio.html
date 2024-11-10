@@ -9,7 +9,7 @@
   <header>
     <div class="cabecalho">
       <h1>Pergunta 2 - <u>Turma Desenvolvimento de Sistemas 2°Ds</u></h1>
-      <a href="menuInicial.html"> 
+      <a href="menuInicial.html">
         <img
           class="casaIcone"
           src="https://img.icons8.com/ios7/600/FFFFFF/home.png"
@@ -23,22 +23,22 @@
 
   <body>
     <div class="boxPergunta">
-      <h2 class="pergunta">
-        Qual a linguagem a seguir é usada para a <span>estilização</span>
-      </h2>
+      <h2 class="pergunta">Qual a função do atributo "<span>lang</span>" na tag < html > ?</h2>
 
-      <button class="botoesErrado">JavaScript (Js)</button>
-      <button class="botoesErrado">C Plus Plus (C ++)</button>
-      <button id="buttonShow" class="botoes">
-        Cascading Style Sheets (CSS)
+      <button id="buttonShow" class="botoes item1">
+        Define o idioma principal da página
+      </button>
+      <button class="botoesErrado">Define o tipo de conteúdo da pagina</button>
+      <button class="botoesErrado ">
+        Especificar a linguagem usada no conteúdo da página.
       </button>
     </div>
 
     <div class="timer" id="timer">120</div>
 
-    <dialog id="modal" class="modal">
+    <dialog id="modalResposta" class="modal">
       <h2>Você tem certeza da sua resposta?</h2>
-      <button class="buttonYes" data-page="fase3facil.html">Sim</button>
+      <button class="buttonYes" data-page="fase3medio.html">Sim</button>
       <button class="buttonNo">Não</button>
     </dialog>
 
@@ -71,7 +71,7 @@
       const buttonShow = document.querySelector("#buttonShow");
       const botoesErrado = document.querySelectorAll(".botoesErrado");
 
-      const modalResposta = document.querySelector("#modal");
+      const modalResposta = document.querySelector("#modalResposta");
       const modalErrado = document.querySelector("#modalErrado");
 
       const buttonYes = document.querySelectorAll(".buttonYes");
@@ -98,7 +98,6 @@
           }
         });
       });
-
       buttonYes.forEach((button) => {
         button.addEventListener("click", function () {
           const targetPage = button.getAttribute("data-page");
@@ -106,6 +105,7 @@
         });
       });
 
+      // Ação do botão "Sim" no modal de erro
       buttonYesWrong.forEach((buttonYesWrong) => {
         buttonYesWrong.addEventListener("click", function () {
           window.location.href = "perdeu.html";

@@ -4,11 +4,11 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="stylesheet" type="text/css" href="style.css" />
-    <title>Segunda Pergunta</title>
+    <title>Primeira Pergunta</title>
   </head>
   <header>
     <div class="cabecalho">
-      <h1>Pergunta 2 - <u>Turma Desenvolvimento de Sistemas 2°Ds</u></h1>
+      <h1>Pergunta 1 - <u>Turma Desenvolvimento de Sistemas 2°Ds</u></h1>
       <a href="menuInicial.html"> 
         <img
           class="casaIcone"
@@ -17,28 +17,32 @@
           width="40px"
           height="40px"
         />
-      </a>
+    </a>
+   
     </div>
   </header>
 
   <body>
     <div class="boxPergunta">
-      <h2 class="pergunta">
-        Qual a linguagem a seguir é usada para a <span>estilização</span>
-      </h2>
+      <h2 class="pergunta">  Quando você usa a tag "<span>footer</span>" em um HTML, oque ela representa?</h2>
 
-      <button class="botoesErrado">JavaScript (Js)</button>
-      <button class="botoesErrado">C Plus Plus (C ++)</button>
-      <button id="buttonShow" class="botoes">
-        Cascading Style Sheets (CSS)
+      
+      <button class="botoesErrado">Representa o "pé" de um HTML aonde fica as principais configurações da sua aplicação </button>
+      <button class="botoesErrado">
+        Representa o local aonde fica os principais botões de navegação em um site
       </button>
+        <button id="buttonShow" class="botoes">
+        Representa o rodapé da página, geralmente contendo informações de copyright, links e detalhes de contato.
+      </button> 
+
+
     </div>
 
     <div class="timer" id="timer">120</div>
 
-    <dialog id="modal" class="modal">
+    <dialog id="modalResposta" class="modal">
       <h2>Você tem certeza da sua resposta?</h2>
-      <button class="buttonYes" data-page="fase3facil.html">Sim</button>
+      <button class="buttonYes" data-page="fase2dificil.html">Sim</button>
       <button class="buttonNo">Não</button>
     </dialog>
 
@@ -71,7 +75,7 @@
       const buttonShow = document.querySelector("#buttonShow");
       const botoesErrado = document.querySelectorAll(".botoesErrado");
 
-      const modalResposta = document.querySelector("#modal");
+      const modalResposta = document.querySelector("#modalResposta");
       const modalErrado = document.querySelector("#modalErrado");
 
       const buttonYes = document.querySelectorAll(".buttonYes");
@@ -98,7 +102,6 @@
           }
         });
       });
-
       buttonYes.forEach((button) => {
         button.addEventListener("click", function () {
           const targetPage = button.getAttribute("data-page");
@@ -106,6 +109,7 @@
         });
       });
 
+      // Ação do botão "Sim" no modal de erro
       buttonYesWrong.forEach((buttonYesWrong) => {
         buttonYesWrong.addEventListener("click", function () {
           window.location.href = "perdeu.html";

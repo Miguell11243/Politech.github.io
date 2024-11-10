@@ -23,22 +23,25 @@
 
   <body>
     <div class="boxPergunta">
-      <h2 class="pergunta">
-        Qual a linguagem a seguir é usada para a <span>estilização</span>
-      </h2>
+      <h2 class="pergunta"> Qual a principal diferença entre < section> e < div > em HTML?</h2>
 
-      <button class="botoesErrado">JavaScript (Js)</button>
-      <button class="botoesErrado">C Plus Plus (C ++)</button>
+      
+      <button class="botoesErrado">
+        < section > é usada para listas, enquanto < div > é usada para conteúdo textual.
+      </button>
       <button id="buttonShow" class="botoes">
-        Cascading Style Sheets (CSS)
+        < section > tem um significado semântico, enquanto < div > é uma tag genérica.
+      </button>
+      <button class="botoesErrado">
+        < div > define áreas de navegação, enquanto < section > define títulos.
       </button>
     </div>
 
     <div class="timer" id="timer">120</div>
 
-    <dialog id="modal" class="modal">
+    <dialog id="modalResposta" class="modal">
       <h2>Você tem certeza da sua resposta?</h2>
-      <button class="buttonYes" data-page="fase3facil.html">Sim</button>
+      <button class="buttonYes" data-page="fase3dificil.html">Sim</button>
       <button class="buttonNo">Não</button>
     </dialog>
 
@@ -71,7 +74,7 @@
       const buttonShow = document.querySelector("#buttonShow");
       const botoesErrado = document.querySelectorAll(".botoesErrado");
 
-      const modalResposta = document.querySelector("#modal");
+      const modalResposta = document.querySelector("#modalResposta");
       const modalErrado = document.querySelector("#modalErrado");
 
       const buttonYes = document.querySelectorAll(".buttonYes");
@@ -98,7 +101,6 @@
           }
         });
       });
-
       buttonYes.forEach((button) => {
         button.addEventListener("click", function () {
           const targetPage = button.getAttribute("data-page");
@@ -106,6 +108,7 @@
         });
       });
 
+      // Ação do botão "Sim" no modal de erro
       buttonYesWrong.forEach((buttonYesWrong) => {
         buttonYesWrong.addEventListener("click", function () {
           window.location.href = "perdeu.html";
