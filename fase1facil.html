@@ -10,32 +10,46 @@
     <div class="cabecalho">
       <h1>Pergunta 1 - <u>Turma Desenvolvimento de Sistemas 2°Ds</u></h1>
       <button class="botaoInicio" onclick="certezaInicio()">
-      <img class="casaIcone"src="https://img.icons8.com/ios7/600/FFFFFF/home.png" alt="" width="40px" height="40px">
+        <img
+          class="casaIcone"
+          src="https://img.icons8.com/ios7/600/FFFFFF/home.png"
+          alt=""
+          width="40px"
+          height="40px"
+        />
       </button>
     </div>
   </header>
 
   <body>
-    <div class="boxPergunta"> 
-      <h2 class="pergunta">Oque significa "<span>HTML</span>" ?</h2>
+    <div class="boxPergunta">
+      <h2 class="pergunta">O que significa "<span>HTML</span>" ?</h2>
 
-      <button onclick="respostaCorreta()" class="botoes">
-        <a class="respostas">
-          Linguagem de Marcação de Hipertexto</a
-        >
+      <button id="buttonShow" class="botoes">
+        Linguagem de Marcação de Hipertexto
       </button>
-      <button onclick="respostaErrada()" class="botoes">
-        <a class="respostas"> Hiper linguagem de Programação</a>
-      </button>
-      <button onclick="respostaErrada()" class="botoes">
-        <a class="respostas"> Linguagem de Orientação de HiperTextos</a>
+      <button class="botoesErrado">Hiper linguagem de Programação</button>
+      <button class="botoesErrado">
+        Linguagem de Orientação de HiperTextos
       </button>
     </div>
 
     <div class="timer" id="timer">120</div>
 
+    <dialog id="modalResposta" class="modal">
+      <h2>Você tem certeza da sua resposta?</h2>
+      <button class="buttonYes" data-page="fase2facil.html">Sim</button>
+      <button class="buttonNo">Não</button>
+    </dialog>
+
+    <dialog id="modalErrado" class="modal">
+      <h2>Você tem certeza da sua resposta?</h2>
+      <button class="buttonYesWrong">Sim</button>
+      <button class="buttonNo">Não</button>
+    </dialog>
+
     <script>
-      let timeLeft = 1200;
+      let timeLeft = 120;
 
       const timerElement = document.getElementById("timer");
 
@@ -46,50 +60,57 @@
 
         if (timeLeft < 0) {
           clearInterval(timerInterval);
-          timerElement.textContent = alert("O tempo acabou c é burro");
+          alert("O tempo acabou c é burro");
+          timerElement.textContent = "Tempo esgotado!";
           window.location.href = "paginaRespostaErrada.html";
         }
       }
 
       const timerInterval = setInterval(updateTimer, 1000);
 
-      function respostaErrada() {
-        let certezaResposta = prompt("Você tem certeza de sua Resposta?");
+      const buttonShow = document.querySelector("#buttonShow");
+      const botoesErrado = document.querySelectorAll(".botoesErrado");
 
-        if (certezaResposta.toLowerCase() === "sim") {
-          alert("Infelizmente sua resposta está completamente errada");
-          window.location.href = "paginaRespostaErrada.html";
-        } else {
-          return;
-        }
-      }
+      const modalResposta = document.querySelector("#modalResposta");
+      const modalErrado = document.querySelector("#modalErrado");
 
-      function respostaCorreta() {
-        let certezaResposta2 = prompt("Você tem certeza de sua Resposta?");
+      const buttonYes = document.querySelectorAll(".buttonYes");
+      const buttonNo = document.querySelectorAll(".buttonNo");
+      const buttonYesWrong = document.querySelectorAll(".buttonYesWrong");
 
-        if (certezaResposta2.toLowerCase() === "sim") {
-          alert("Você esta completamente e..");
-          alert("e...")
-          alert("Eee..")
-          alert("Exato!!")
-          window.location.href = "fase2facil.html";
-        } else {
-          return;
-        }
-      }
+      buttonShow.addEventListener("click", function () {
+        modalResposta.showModal();
+      });
 
+      botoesErrado.forEach((button) => {
+        button.addEventListener("click", function () {
+          modalErrado.showModal();
+        });
+      });
 
-      function certezaInicio() {
-        let certeza = prompt("Você tem certeza que quer voltar ao inicio");
+      buttonNo.forEach((button) => {
+        button.addEventListener("click", function () {
+          if (modalResposta.open) {
+            modalResposta.close();
+          }
+          if (modalErrado.open) {
+            modalErrado.close();
+          }
+        });
+      });
+      buttonYes.forEach((button) => {
+        button.addEventListener("click", function () {
+          const targetPage = button.getAttribute("data-page");
+          window.location.href = targetPage;
+        });
+      });
 
-        if (certeza === null || certeza === "") {
-          return;
-        }
-
-        if (certeza.toLowerCase() === "sim") {
-          window.location.href = "menuPrincipal.html";
-        }
-      }
+      // Ação do botão "Sim" no modal de erro
+      buttonYesWrong.forEach((buttonYesWrong) => {
+        buttonYesWrong.addEventListener("click", function () {
+          window.location.href = "perdeu.html";
+        });
+      });
     </script>
   </body>
 </html>

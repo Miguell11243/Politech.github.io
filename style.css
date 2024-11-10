@@ -1,216 +1,246 @@
 body {
-         
-  background-image: url('https://i.imgur.com/LMui7h0.png');
-  background-size: cover; 
-  background-position: center; 
-  background-attachment: fixed; 
-   height: 90vh; 
-   font-family: Century Gothic;
-  }
-
-.cabecalho{
-display: flex;
-flex-direction: row;
-justify-content: space-between;
-background-color: black;
-color: white;
-padding: 10px;
-border-radius: 10px;
-font-size: 10px;
-font-family: Century Gothic;
-font-weight: 100;
+  background-image: url("https://i.imgur.com/LMui7h0.png");
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  height: 90vh;
+  font-family: Century Gothic;
+  margin: 0;
 }
 
-.inicio{
-margin-top: 30px;
-text-decoration: none;
-color: white;
+.cabecalho {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  background-color: black;
+  color: white;
+  padding: 10px;
+  font-size: 10px;
+  font-family: Century Gothic;
+  font-weight: 100;
 }
 
-.boxPergunta{
-text-align: center;
-font-size: 35px;
-background-color: rgba(0, 0, 66, 0.74);
-width: 950px;
-height: 390px;
-margin: 7% auto;
-color: white;
-padding: 10px;
-border-radius: 10px;
-border: 5px solid black;
-box-shadow: 0 0 10px black;
+.inicio {
+  margin-top: 30px;
+  text-decoration: none;
+  color: white;
 }
 
-.botoes{
-color: black;
-font-size: 20px;
-padding: 10px;
-border-top-left-radius: 8px;
-border-top-right-radius: 8px;
-border: none;
-margin: 10px;
-border-bottom: 10px solid black;
-transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s;
+.boxPergunta {
+  text-align: center;
+  font-size: 35px;
+  background-color: rgba(0, 0, 66, 0.74);
+  width: 950px;
+  height: 390px;
+  margin: 7% auto;
+  color: white;
+  padding: 10px;
+  border-radius: 10px;
+  border: 5px solid black;
+  box-shadow: 0 0 10px black;
 }
 
+.botoes {
+  color: black;
+  font-size: 20px;
+  padding: 10px;
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+  border: none;
+  margin: 10px;
+  border-bottom: 10px solid black;
+  transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s;
+}
 
-.botoes:hover{
+.botoes:hover {
   border-bottom: 0px;
   box-shadow: 0 0 5px black;
-background-color: midnightblue;
-transition: 0.4s;	
-transform: scale(0.99);
-					a{
-					color: white;
-					}
-}
-.respostas{
-text-decoration: none;
-color: black;
+  background-color: midnightblue;
+  transition: 0.4s;
+  transform: scale(0.99);
+  color: white;
 }
 
+.botoesErrado {
+  color: black;
+  font-size: 20px;
+  padding: 10px;
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+  border: none;
+  margin: 10px;
+  border-bottom: 10px solid black;
+  transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s;
+}
 
+.botoesErrado:hover {
+  border-bottom: 0px;
+  box-shadow: 0 0 5px black;
+  background-color: midnightblue;
+  transition: 0.4s;
+  transform: scale(0.99);
+  color: white;
+}
+.respostas {
+  text-decoration: none;
+  color: black;
+}
 
-   .timer {
-      font-size: 48px;
-      font-family: Arial, sans-serif;
-      text-align: center;
-      margin-top: 20px;
-      width: 82px;
-      height: 60px;
-      margin-top: -10%;
-      border-radius: 10px;
-      background-color: black;
-      box-shadow: 0 0 10px black;
-      color: white;
-    }
+.timer {
+  font-size: 48px;
+  font-family: Arial, sans-serif;
+  text-align: center;
+  margin-top: 20px;
+  width: 82px;
+  height: 60px;
+  margin-top: -10%;
+  border-radius: 10px;
+  background-color: black;
+  box-shadow: 0 0 10px black;
+  color: white;
+}
 
-    .pergunta{
-    font-size: 55px;
-    }
+.pergunta {
+  font-size: 55px;
+}
 
-    .botaoInicio{
-    background-color: black;
-    border: none;
-    font-size: 20px;
-   
-  }
+.botaoInicio {
+  background-color: black;
+  border: none;
+  font-size: 20px;
+}
 
-    span{
-    text-decoration: underline;
-    
-    }
+span {
+  text-decoration: underline;
+}
 
-  .casaIcone{
+.casaIcone {
   padding: 10px;
   border-radius: 5px;
   transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s;
-  }
-  .casaIcone:hover{
-    background-color: rgb(11, 0, 53);
-    transition: 0.5s;
-  } 
-
-  .botaoDificuldade{
-    color: black;
-    font-size: 30px;
-    padding: 18px;
-    margin: 10px;
-    border-radius: 10px;
-    border: none;
-    transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s;
-    border: 2px solid rgb(12, 12, 204);
-  }
-
-  .botaoDificuldade:hover{
-      border-bottom: 0px;
-      box-shadow: 0 0 5px black;
-    background-color: midnightblue;
-    transform: scale(1.2);
-    transition: 0.4s;	
-              a{
-              color: white;
-              }
-    }
-
-    .gif{
-position: absolute;
-width: 200vh;
-height: 90vh;
-opacity: 1;
-transition: opacity 0.5s ease-out;
-margin-top: -6%;
+}
+.casaIcone:hover {
+  background-color: rgb(11, 0, 53);
+  transition: 0.5s;
 }
 
-.gif.hidden{
-opacity: 0;
+.botaoDificuldade {
+  color: black;
+  font-size: 30px;
+  padding: 18px;
+  margin: 10px;
+  border-radius: 10px;
+  border: none;
+  transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s;
+  border: 2px solid rgb(12, 12, 204);
 }
 
-.parabensTitulo{
-color: white;
-text-align: center;
-margin-top: 100px;
-font-family: 600px;
-}
-
-.trofeu{
-padding: 10px;
-width: 220px;
-height: 240px;
-}
-
-.container{
-display: grid;
-place-items: center;
-}
-
-.reiniciar{
-text-decoration: none;
-color: white;
-background-color: navy;
-padding: 10px;
-font-size: 30px;
-margin-left: 3%;
-margin-top: 10%;
-border-radius: 10px;
-transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease;
-}
-
-.reiniciar:hover{
+.botaoDificuldade:hover {
+  border-bottom: 0px;
   box-shadow: 0 0 5px black;
-background-color: white;
-transform: scale(1.2);
-transition: 0.4s;	
-color : black;
+  background-color: midnightblue;
+  transform: scale(1.2);
+  transition: 0.4s;
+  color: white;
 }
 
-
-.Iniciar{
-text-align: center;
-color: white;
-text-decoration: none;
+.gif {
+  position: absolute;
+  width: 200vh;
+  height: 90vh;
+  opacity: 1;
+  transition: opacity 0.5s ease-out;
+  margin-top: -6%;
 }
 
-.botaoIniciarJogo{
+.gif.hidden {
+  opacity: 0;
+}
+
+.parabensTitulo {
+  text-align: center;
+  padding: 10px;
+  border-radius: 5px;
+  border: 2px solid white;
+  color: white;
+  font-family: 600px;
+  background-color: rgb(0, 21, 85);
+}
+
+.trofeu {
+  padding: 10px;
+  width: 220px;
+  height: 240px;
+}
+
+.container {
+  display: grid;
+  place-items: center;
+}
+
+.reiniciar {
   text-decoration: none;
   color: white;
   background-color: navy;
-  border: 2px solid white;
+
   padding: 10px;
   font-size: 30px;
   margin-left: 3%;
-  margin-top: 3%;
+  margin-top: 9%;
   border-radius: 10px;
-  transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease;
+  transition: background 0.3s ease, color 0.3s ease, transform 0.3s;
 }
-.iniciar:hover{
-color: black;
+
+.reiniciar:hover {
+  transform: scale(1.09);
+  background-color: white;
+  color: blue;
 }
-.botaoIniciarJogo:hover{
-  box-shadow: 0 0 5px black;
-background-color: white;
-transform: scale(1.2);
-transition: 0.4s;	
-color: black;
-border: 2px solid navy;
+
+footer {
+  background-color: black;
+  color: white;
+  text-align: center;
+  margin-top: 30px;
+  padding: 6px;
+  width: 99.1%;
+  height: 10.8%;
+  bottom: 0;
+}
+
+.modal {
+  transform: scale(1.4);
+  border-radius: 10px;
+  border: none;
+  box-shadow: 0 0 20px black;
+  text-align: center;
+  transition: transform 0.2s linear; /* Transições suaves */
+  animation: aparecerModal 0.2s linear;
+  max-width: 700px;
+  button {
+    border: none;
+    padding: 10px;
+    background-color: navy;
+    color: white;
+    border-radius: 10px;
+    width: 50px; 
+    transition: transform 0.3s ease, background-color 0.3s ease;
+    cursor: pointer;
+  }
+
+  button:hover{
+   background-color: rgb(0, 98, 190);
+   transform: scale(1.1);
+  
+  }
+}
+
+@keyframes aparecerModal {
+  50% {
+    transform: scale(1.1);
+  }
+
+  0% {
+    transform: scale(0.9);
+  }
 }

@@ -6,97 +6,49 @@
     <link rel="stylesheet" type="text/css" href="style.css" />
     <title>Primeira Pergunta</title>
   </head>
-  <header>  
+  <header>
     <div class="cabecalho">
-      <h1><u>Turma Desenvolvimento de Sistemas 2°Ds</u></h1>
+      <h1>Pergunta 1 - <u>Turma Desenvolvimento de Sistemas 2°Ds</u></h1>
       <button class="botaoInicio" onclick="certezaInicio()">
-        <img
-          class="casaIcone"
-          src="https://img.icons8.com/ios7/600/FFFFFF/home.png"
-          alt=""
-          width="40px"
-          height="40px"
-        />
+      <img class="casaIcone" src="https://img.icons8.com/ios7/600/FFFFFF/home.png" alt="" width="40px" height="40px">
       </button>
     </div>
   </header>
 
   <body>
-    <div class="boxPergunta">
+    <div class="boxPergunta"> 
       <h2 class="pergunta">Qual a <span>Dificuldade</span> desejada?</h2>
 
-      <button onclick="certezaFacil()" class="botaoDificuldade">
-        <a class="dificuldade">
-          Fácil</a
-        >
+      <button id="buttonShowFacil" class="botaoDificuldade">
+        Facil
       </button>
-      <button onclick="certezaMedio()" class="botaoDificuldade">
-        <a class="dificuldade"> Medio</a>
+      
+      <button id="buttonShowMedio" class="botaoDificuldade">
+        Medio
       </button>
-      <button onclick="certezaDificil()" class="botaoDificuldade">
-        <a class="dificuldade"> Díficil
+
+      <button id="buttonShowDificil" class="botaoDificuldade">
+        Dificil
       </button>
     </div>
 
-  
+    <dialog id="modalFacil" class="modal">
+      <h2>Você tem certeza da sua respota?</h2>
+      <button class="buttonYes" data-page="fase1facil.html">Sim</button>
+      <button class="buttonNo">Não</button>
+    </dialog>
 
-    <script>
-    
+    <dialog id="modalMedio" class="modal">
+      <h2>Você tem certeza da sua respota?</h2>
+      <button class="buttonYes" data-page="fase1medio.html">Sim</button>
+      <button class="buttonNo">Não</button>
+    </dialog>
 
-      function certezaFacil() {
-        let certezaResposta = prompt("Você tem certeza que gostaria dessa Dificuldade?");
-
-        if (certezaResposta.toLowerCase() === "sim") {
-
-          let gostariaDificuldade = prompt ("Esta pronto para começar? Você terá 1 minuto para responder 4 questões fáceis");
-
-              if (gostariaDificuldade.toLowerCase() === "sim" || "ok")
-                window.location.href = "fase1facil.html";
-        
-              } else{
-                    return;
-              }
-          
-         
-      }
-
-      function certezaMedio() {
-        let certezaResposta2 = prompt("Você tem certeza que gostaria dessa Dificuldade?");
-
-        if (certezaResposta2.toLowerCase() === "sim") {
-          let gostariaDificuldade2 = prompt ("Esta pronto para começar? Você terá 1 minuto para responder 3 questões medias");
-              if (gostariaDificuldade2.toLowerCase() === "sim")
-                window.location.href = "fase1medio.html";
-        
-              } else {
-          return;
-        }
-      }
-
-      function certezaDificil() {
-        let certezaResposta3 = prompt("Você tem certeza que gostaria dessa Dificuldade?");
-
-        if (certezaResposta3.toLowerCase() === "sim") {
-          let gostariaDificuldade3 = prompt ("Esta pronto para começar? Você terá 1 minuto para responder 3 questões difíceis");
-              if (gostariaDificuldade3.toLowerCase() === "sim")
-                window.location.href = "fase1facil.html";
-        
-              } else {
-          return;
-        }
-      }
-
-      function certezaInicio() {
-        let certeza = prompt("Você tem certeza que quer voltar ao inicio");
-
-        if (certeza === null || certeza === "") {
-          return;
-        }
-
-        if (certeza.toLowerCase() === "sim") {
-          window.location.href = "menuPrincipal.html";
-        }
-      }
-    </script>
+    <dialog id="modalDificil" class="modal">
+      <h2>Você realmente gostaria da dificuldade <u>Dificil</u> ? Você tera 120 segundos para responder 3 questões dificeis (Talvez haja perguntas no qual não explicamos)</h2>
+      <button class="buttonYes" data-page="fase1dificil.html">Sim</button>
+      <button class="buttonNo">Não</button>
+    </dialog>
+    <script src="script.js"></script>
   </body>
 </html>
