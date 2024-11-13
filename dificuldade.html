@@ -8,13 +8,18 @@
   </head>
   <header>
     <div class="cabecalho">
-      <h1>Escolha a dificuldade <u>-Turma Desenvolvimento de Sistemas 2°Ds</u></h1>
-      <button class="botaoInicio">
-      <img class="casaIcone" src="" alt="" width="40px" height="40px">
-      </button>
+      <h1>Escolha a dificuldade - <u>Turma Desenvolvimento de Sistemas 2°Ds</u></h1>
+      <a href="#" id="homeLink">
+        <img
+          class="casaIcone"
+          src="https://img.icons8.com/ios7/600/FFFFFF/home.png"
+          alt=""
+          width="40px"
+          height="40px"
+        />
+      </a>
     </div>
   </header>
-
   <body>
     <div class="boxPerguntaDificuldade"> 
       <h2 class="pergunta">Qual a <span>Dificuldade</span> desejada?</h2>
@@ -49,6 +54,43 @@
       <button class="buttonYes" data-page="fase1dificil.html">Sim</button>
       <button class="buttonNo">Não</button>
     </dialog>
-    <script src="script.js"></script>
+
+    <script>
+      // Manipulador para o link de home, que impede o "voltar"
+      document.getElementById("homeLink").addEventListener("click", function(event) {
+        event.preventDefault(); // Impede o comportamento padrão
+        window.location.replace("menuInicial.html"); // Redireciona sem deixar histórico
+      });
+
+      // Manipuladores para os botões de dificuldade
+      document.getElementById("buttonShowFacil").addEventListener("click", function() {
+        document.getElementById("modalFacil").showModal();
+      });
+
+      document.getElementById("buttonShowMedio").addEventListener("click", function() {
+        document.getElementById("modalMedio").showModal();
+      });
+
+      document.getElementById("buttonShowDificil").addEventListener("click", function() {
+        document.getElementById("modalDificil").showModal();
+      });
+
+      // Manipuladores para o modal (Sim / Não)
+      document.querySelectorAll(".buttonYes").forEach(function(button) {
+        button.addEventListener("click", function() {
+          const targetPage = button.getAttribute("data-page");
+          window.location.replace(targetPage); // Usando replace para impedir voltar
+        });
+      });
+
+      document.querySelectorAll(".buttonNo").forEach(function(button) {
+        button.addEventListener("click", function() {
+          const modal = button.closest("dialog");
+          if (modal) {
+            modal.close();
+          }
+        });
+      });
+    </script>
   </body>
 </html>

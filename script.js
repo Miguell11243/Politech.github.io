@@ -9,9 +9,9 @@ function updateTimer() {
 
   if (timeLeft < 0) {
     clearInterval(timerInterval);
-    alert("O tempo acabou c é burro");
+    alert("Tempo Esgotado!");
     timerElement.textContent = "Tempo esgotado!";
-    window.location.href = "paginaRespostaErrada.html";
+    window.location.replace = "paginaRespostaErrada.html";
   }
 }
 
@@ -62,13 +62,13 @@ buttonNo.forEach(button => {
 buttonYes.forEach(button => {
   button.addEventListener('click', function () {
     const targetPage = button.getAttribute('data-page'); // Obtém a URL do atributo data-page
-    window.location.href = targetPage; // Redireciona para a página
+    window.location.replace = targetPage; // Redireciona para a página
   });
 });
 
 // Ação do botão "Sim" no modal de erro
 buttonYesWrong.forEach(buttonYesWrong => {
   buttonYesWrong.addEventListener('click', function(){
-    window.location.href = "perdeu.html";
+    window.location.replace = "perdeu.html";
   });
 });

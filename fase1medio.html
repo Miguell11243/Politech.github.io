@@ -25,11 +25,11 @@
     <div class="boxPergunta">
       <h2 class="pergunta">Qual dos seguintes metadados é usado para definir o conjunto de <span>caracteres</span> que sera usado na página?</h2>
 
-      <button class="botoesErrado">
+      <button class="botoesShow2">
         < meta name="viewport" content="width=device-width,<br> initial-scale=1" >
       </button>
       <button id="buttonShow"class="botoes"> < meta charset="UTF-8" ></button>
-      <button class="botoesErrado">
+      <button class="botoesShow2">
         < meta name="date" content="2024-11-10T12:00:00Z" />
 
       </button>
@@ -63,14 +63,14 @@
           clearInterval(timerInterval);
           alert("O tempo acabou c é burro");
           timerElement.textContent = "Tempo esgotado!";
-          window.location.href = "paginaRespostaErrada.html";
+          window.location.replace("paginaRespostaErrada.html");
         }
       }
 
       const timerInterval = setInterval(updateTimer, 1000);
 
       const buttonShow = document.querySelector("#buttonShow");
-      const botoesErrado = document.querySelectorAll(".botoesErrado");
+      const botoesShow2 = document.querySelectorAll(".botoesShow2");
 
       const modalResposta = document.querySelector("#modalResposta");
       const modalErrado = document.querySelector("#modalErrado");
@@ -83,7 +83,7 @@
         modalResposta.showModal();
       });
 
-      botoesErrado.forEach((button) => {
+      botoesShow2.forEach((button) => {
         button.addEventListener("click", function () {
           modalErrado.showModal();
         });
@@ -102,14 +102,14 @@
       buttonYes.forEach((button) => {
         button.addEventListener("click", function () {
           const targetPage = button.getAttribute("data-page");
-          window.location.href = targetPage;
+          window.location.replace (targetPage);
         });
       });
 
       // Ação do botão "Sim" no modal de erro
       buttonYesWrong.forEach((buttonYesWrong) => {
         buttonYesWrong.addEventListener("click", function () {
-          window.location.href = "perdeu.html";
+          window.location.replace ("perdeu.html");
         });
       });
     </script>

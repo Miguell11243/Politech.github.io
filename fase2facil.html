@@ -27,8 +27,8 @@
         Qual a linguagem a seguir é usada para a <span>estilização</span>
       </h2>
 
-      <button class="botoesErrado">JavaScript (Js)</button>
-      <button class="botoesErrado">C Plus Plus (C ++)</button>
+      <button class="botoesShow2">JavaScript (Js)</button>
+      <button class="botoesShow2">C Plus Plus (C ++)</button>
       <button id="buttonShow" class="botoes">
         Cascading Style Sheets (CSS)
       </button>
@@ -62,14 +62,14 @@
           clearInterval(timerInterval);
           alert("O tempo acabou c é burro");
           timerElement.textContent = "Tempo esgotado!";
-          window.location.href = "paginaRespostaErrada.html";
+          window.location.replace ("paginaRespostaErrada.html");
         }
       }
 
       const timerInterval = setInterval(updateTimer, 1000);
 
       const buttonShow = document.querySelector("#buttonShow");
-      const botoesErrado = document.querySelectorAll(".botoesErrado");
+      const botoesShow2 = document.querySelectorAll(".botoesShow2");
 
       const modalResposta = document.querySelector("#modal");
       const modalErrado = document.querySelector("#modalErrado");
@@ -82,7 +82,7 @@
         modalResposta.showModal();
       });
 
-      botoesErrado.forEach((button) => {
+      botoesShow2.forEach((button) => {
         button.addEventListener("click", function () {
           modalErrado.showModal();
         });
@@ -102,15 +102,17 @@
       buttonYes.forEach((button) => {
         button.addEventListener("click", function () {
           const targetPage = button.getAttribute("data-page");
-          window.location.href = targetPage;
+          window.location.replace(targetPage) ;
         });
-      });
+      }); 
 
       buttonYesWrong.forEach((buttonYesWrong) => {
         buttonYesWrong.addEventListener("click", function () {
-          window.location.href = "perdeu.html";
+          window.location.replace("perdeu.html");
         });
       });
+
+      
     </script>
   </body>
 </html>

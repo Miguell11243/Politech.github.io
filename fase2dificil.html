@@ -26,13 +26,13 @@
       <h2 class="pergunta"> Qual a principal diferença entre < section> e < div > em HTML?</h2>
 
       
-      <button class="botoesErrado">
+      <button class="botoesShow2">
         < section > é usada para listas, enquanto < div > é usada para conteúdo textual.
       </button>
       <button id="buttonShow" class="botoes">
         < section > tem um significado semântico, enquanto < div > é uma tag genérica.
       </button>
-      <button class="botoesErrado">
+      <button class="botoesShow2">
         < div > define áreas de navegação, enquanto < section > define títulos.
       </button>
     </div>
@@ -65,14 +65,14 @@
           clearInterval(timerInterval);
           alert("O tempo acabou c é burro");
           timerElement.textContent = "Tempo esgotado!";
-          window.location.href = "paginaRespostaErrada.html";
+          window.location.replace ("paginaRespostaErrada.html");
         }
       }
 
       const timerInterval = setInterval(updateTimer, 1000);
 
       const buttonShow = document.querySelector("#buttonShow");
-      const botoesErrado = document.querySelectorAll(".botoesErrado");
+      const botoesShow2 = document.querySelectorAll(".botoesShow2");
 
       const modalResposta = document.querySelector("#modalResposta");
       const modalErrado = document.querySelector("#modalErrado");
@@ -85,7 +85,7 @@
         modalResposta.showModal();
       });
 
-      botoesErrado.forEach((button) => {
+      botoesShow2.forEach((button) => {
         button.addEventListener("click", function () {
           modalErrado.showModal();
         });
@@ -104,14 +104,14 @@
       buttonYes.forEach((button) => {
         button.addEventListener("click", function () {
           const targetPage = button.getAttribute("data-page");
-          window.location.href = targetPage;
+          window.location.replace (targetPage);
         });
       });
 
       // Ação do botão "Sim" no modal de erro
       buttonYesWrong.forEach((buttonYesWrong) => {
         buttonYesWrong.addEventListener("click", function () {
-          window.location.href = "perdeu.html";
+          window.location.replace ("perdeu.html");
         });
       });
     </script>

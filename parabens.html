@@ -38,6 +38,12 @@
                 }, 1000); 
             }, 2000);
         };
+
+          // Previne que o usuário possa voltar para a página anterior
+      window.addEventListener('popstate', function () {
+  // Impedir que a página volte
+  history.pushState(null, '', window.location.href);
+});
   </script>
   <footer>
     <h5 class="footerTitulo">Esse Jogo foi feito por Miguel Montenegro - Turma De Desenvolvimento de Sistemas</h5>

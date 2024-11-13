@@ -6,29 +6,32 @@
     <link rel="stylesheet" type="text/css" href="style.css" />
     <title>Primeira Pergunta</title>
   </head>
-  <header>
-    <div class="cabecalho">
-      <h1>Pergunta 1 - <u>Turma Desenvolvimento de Sistemas 2°Ds</u></h1>
-      <a href="menuInicial.html"> 
-        <img
-          class="casaIcone"
-          src="https://img.icons8.com/ios7/600/FFFFFF/home.png"
-          alt=""
-          width="40px"
-          height="40px"
-        /></a>
-    </div>
-  </header>
-
   <body>
+    <header>
+      <div class="cabecalho">
+        <h1>Pergunta 1 - <u>Turma Desenvolvimento de Sistemas 2°Ds</u></h1>
+        <a href="menuInicial.html">
+          <img
+            class="casaIcone"
+            src="https://img.icons8.com/ios7/600/FFFFFF/home.png"
+            alt="Home"
+            width="40px"
+            height="40px"
+          />
+        </a>
+      </div>
+    </header>
+
     <div class="boxPergunta">
       <h2 class="pergunta">O que significa "<span>HTML</span>" ?</h2>
 
       <button id="buttonShow" class="botoes item1">
         Linguagem de Marcação de Hipertexto
       </button>
-      <button class="botoesErrado item2">Hiper linguagem de Programação</button>
-      <button class="botoesErrado item2">
+      <button class="botoesShow2 item2">
+        Hiper linguagem de Programação
+      </button>
+      <button class="botoesShow2 item2">
         Linguagem de Orientação de HiperTextos
       </button>
     </div>
@@ -49,39 +52,39 @@
 
     <script>
       let timeLeft = 120;
-
       const timerElement = document.getElementById("timer");
 
       function updateTimer() {
         timerElement.textContent = timeLeft;
-
         timeLeft--;
 
         if (timeLeft < 0) {
           clearInterval(timerInterval);
-          alert("O tempo acabou c é burro");
+          alert("O tempo acabou! Você é burro.");
           timerElement.textContent = "Tempo esgotado!";
-          window.location.href = "paginaRespostaErrada.html";
+          // Substituindo a página atual para não poder voltar
+          window.location.replace("paginaRespostaErrada.html");
         }
       }
 
       const timerInterval = setInterval(updateTimer, 1000);
 
       const buttonShow = document.querySelector("#buttonShow");
-      const botoesErrado = document.querySelectorAll(".botoesErrado");
+      const botoesShow2 = document.querySelectorAll(".botoesShow2");
 
       const modalResposta = document.querySelector("#modalResposta");
       const modalErrado = document.querySelector("#modalErrado");
 
-      const buttonYes = document.querySelectorAll(".buttonYes");
+      const buttonYes = document.querySelector(".buttonYes");
       const buttonNo = document.querySelectorAll(".buttonNo");
-      const buttonYesWrong = document.querySelectorAll(".buttonYesWrong");
+      const buttonYesWrong = document.querySelector(".buttonYesWrong");
 
+      // Ação do botão "Sim" no modal de resposta
       buttonShow.addEventListener("click", function () {
         modalResposta.showModal();
       });
 
-      botoesErrado.forEach((button) => {
+      botoesShow2.forEach((button) => {
         button.addEventListener("click", function () {
           modalErrado.showModal();
         });
@@ -97,19 +100,18 @@
           }
         });
       });
-      buttonYes.forEach((button) => {
-        button.addEventListener("click", function () {
-          const targetPage = button.getAttribute("data-page");
-          window.location.href = targetPage;
-        });
+
+      buttonYes.addEventListener("click", function () {
+        const targetPage = buttonYes.getAttribute("data-page");
+        window.location.replace(targetPage);
       });
 
-      // Ação do botão "Sim" no modal de erro
-      buttonYesWrong.forEach((buttonYesWrong) => {
-        buttonYesWrong.addEventListener("click", function () {
-          window.location.href = "perdeu.html";
-        });
+      buttonYesWrong.addEventListener("click", function () {
+        window.location.replace("perdeu.html");
       });
+
+
+      
     </script>
   </body>
 </html>

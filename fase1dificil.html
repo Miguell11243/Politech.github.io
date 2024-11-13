@@ -27,8 +27,8 @@
       <h2 class="pergunta">  Quando você usa a tag "<span>footer</span>" em um HTML, oque ela representa?</h2>
 
       
-      <button class="botoesErrado">Representa o "pé" de um HTML aonde fica as principais configurações da sua aplicação </button>
-      <button class="botoesErrado">
+      <button class="botoesShow2">Representa o "pé" de um HTML aonde fica as principais configurações da sua aplicação </button>
+      <button class="botoesShow2">
         Representa o local aonde fica os principais botões de navegação em um site
       </button>
         <button id="buttonShow" class="botoes">
@@ -66,14 +66,14 @@
           clearInterval(timerInterval);
           alert("O tempo acabou c é burro");
           timerElement.textContent = "Tempo esgotado!";
-          window.location.href = "paginaRespostaErrada.html";
+          window.location.replace ("paginaRespostaErrada.html");
         }
       }
 
       const timerInterval = setInterval(updateTimer, 1000);
 
       const buttonShow = document.querySelector("#buttonShow");
-      const botoesErrado = document.querySelectorAll(".botoesErrado");
+      const botoesShow2 = document.querySelectorAll(".botoesShow2");
 
       const modalResposta = document.querySelector("#modalResposta");
       const modalErrado = document.querySelector("#modalErrado");
@@ -86,7 +86,7 @@
         modalResposta.showModal();
       });
 
-      botoesErrado.forEach((button) => {
+      botoesShow2.forEach((button) => {
         button.addEventListener("click", function () {
           modalErrado.showModal();
         });
@@ -105,14 +105,14 @@
       buttonYes.forEach((button) => {
         button.addEventListener("click", function () {
           const targetPage = button.getAttribute("data-page");
-          window.location.href = targetPage;
+          window.location.replace (targetPage);
         });
       });
 
       // Ação do botão "Sim" no modal de erro
       buttonYesWrong.forEach((buttonYesWrong) => {
         buttonYesWrong.addEventListener("click", function () {
-          window.location.href = "perdeu.html";
+          window.location.replace("perdeu.html");
         });
       });
     </script>
