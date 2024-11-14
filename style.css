@@ -127,6 +127,7 @@ body {
   transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s;
   border-radius: 5px;
   border: 3px solid black;
+  border-radius: 10px;
 }
 
 .botoes:hover {
@@ -150,6 +151,7 @@ body {
   transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s;
   border-radius: 5px;
   border: 3px solid black;
+  border-radius: 10px;
 }
 
 .botoesShow2:hover {
@@ -165,14 +167,17 @@ body {
   font-size: 48px;
   font-family: Arial, sans-serif;
   text-align: center;
+  margin: auto;
   margin-top: 20px;
-  width: 82px;
+  padding: 5px;
+  width: 90px;
   height: 60px;
   margin-top: -10%;
   border-radius: 10px;
-  background-color: black;
+  background-color: rgba(0, 0, 0, 0.671);
   box-shadow: 0 0 10px black;
   color: white;
+  position: fixed;
 }
 
 .pergunta {
@@ -220,6 +225,7 @@ span {
 .parabensTitulo {
   text-align: center;
   padding: 10px;
+  margin-inline: 100px;
   border-radius: 5px;
   border: 2px solid white;
   color: white;
@@ -231,12 +237,30 @@ span {
   padding: 10px;
   width: 220px;
   height: 240px;
+  margin-right: 50px;
 }
 
 .container {
   display: grid;
   place-items: center;
 }
+.boxPerdeu {
+  transform: scale(0.9);
+  text-align: center;
+  background: linear-gradient(
+    30deg,
+    rgba(6, 0, 37, 0.747),
+    rgb(0, 0, 88)
+  );
+  width: 950px;
+  height: 500px;
+  margin:auto;
+  color: white;
+  padding: 10px;
+  border-radius: 10px;
+  border: 3px solid black;
+}
+
 
 .reiniciar {
   text-decoration: none;
@@ -247,11 +271,13 @@ span {
   font-size: 30px;
   margin-top: 2%;
   border-radius: 10px;
-  transition: background 0.3s ease, color 0.3s ease, transform 0.3s;
+  transition: background 0.3s ease, color 0.3s ease, transform 0.3s ease, font-size 0.3s ease;
 }
 
 .reiniciar:hover {
   transform: scale(1.09);
+  font-size: 35px;
+
   background-color: white;
   color: blue;
 }
@@ -325,4 +351,63 @@ border-radius: 10px;
 .casaIcone:hover{
 transform: scale(1.2);
 background-color: navy;
+}
+
+@media screen and (max-width: 700px) {
+
+  .cabecalho{
+  height: 100px;
+  }
+
+  .boxIniciar{  
+    width: 350px;
+    height: 1400px;
+  }
+
+
+  .boxPerguntaDificuldade{
+  width: 350px;
+  display: flex;
+  flex-direction: column;
+  height: 550px;
+  }
+
+
+  .modal{
+  width: 230px;
+  }
+
+  .boxPergunta{
+  width: 350px;
+  height: 600px;
+    }
+
+    .pergunta{
+    font-size: 30px;
+    line-height:  35px;
+    }
+  .botoes{
+    width: 300px;
+    height: 100px;
+    font-size: 18px;
+  }
+
+  .botoesShow2{
+  width: 300px;
+  height: 100px;
+  font-size: 18px;
+  }
+
+  .parabensTitulo{
+  width: 353px;
+font-size: 20px;
+margin: 5px;
+padding: 4px;
+}
+
+  .boxPerdeu{
+  transform: scale(0.7);
+  width: 300px;
+  height: 600px;
+}
 }
