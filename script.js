@@ -11,7 +11,7 @@ function updateTimer() {
     clearInterval(timerInterval);
     alert("Tempo Esgotado!");
     timerElement.textContent = "Tempo esgotado!";
-    window.location.replace = "paginaRespostaErrada.html";
+    window.location.replace ("menuInicial.html");
   }
 }
 
